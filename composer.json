@@ -1,0 +1,31 @@
+{
+    "name": "thienson98/tftranslator",
+    "description": "A simple package help you automatically translate all text on your site to other languages.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robert Morris",
+            "email": "thienson.a1@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ThienSon98\\TFTranslator\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "ThienSon98\\TFTranslator\\TFTranslatorServiceProvider"
+            ]
+        }
+    }
+}
