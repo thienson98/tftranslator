@@ -62,7 +62,7 @@ Or translate into Vietnamese, Japanese and Chinese:
 php artisan 3F:translator --lang=ja,vi,zh
 ```
 
-It supports all languages and works with all of the options above.
+It supports all languages and works with all of the options.
 
 ### Remove unused keys
 
