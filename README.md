@@ -52,7 +52,7 @@ Translation functions will be added to the view files and automatically generate
 
 ### Specify other languages
 
-The default language of the translator is *Vietnamese (vi)* and *English (en)*. You can translate into other languages ​​through the ```--lang=<language code>``` option.
+The default languages of the translator are *Vietnamese (vi)* and *English (en)*. You can translate into other languages with the ```--lang=<language code>``` option.
 
 For example, use the following command to translate into Japanese:
 
