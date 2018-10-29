@@ -54,13 +54,13 @@ Translation functions will be added to the view files and automatically generate
 
 The default languages of the translator are *Vietnamese (vi)* and *English (en)*. You can translate into other languages with the ```--lang=<language code>``` option.
 
-For example, use the following command to translate into Japanese:
+For example, use the following command to translate to Japanese:
 
 ```
 php artisan 3F:translator --lang=ja
 ```
 
-Or translate into Vietnamese, Japanese and Chinese:
+Or translate to Vietnamese, Japanese and Chinese:
 
 ```
 php artisan 3F:translator --lang=ja,vi,zh
