@@ -1,5 +1,9 @@
 # 3F Translator
-A simple Laravel package help you automatically translate all text on your site to other languages. Writed by Trieu Tai Niem.
+A simple Laravel package help you automatically translate all text on your site to other languages. Writed by [Trieu Tai Niem](http://facebook.com/trieuniem.it).
+
+##Requirement
+* PHP: >= 7.0
+* Laravel: >= 5.5
 
 ## Features
 * Automatically find translate string in parameter of translation functions ( *_()* or *lang()* ) and generate into json translation files
