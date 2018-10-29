@@ -30,7 +30,7 @@ That's all!
 
 ## How to use?
 
-If you want to automatically generate locks from translation functions into json language files, use the following command:
+If you want to automatically generate keys from translation functions (**__** or **lang**) into json language files, use the following command:
 
 ```
 php artisan 3F:translator
