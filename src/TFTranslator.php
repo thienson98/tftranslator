@@ -115,6 +115,7 @@ class TFTranslator extends Command
             $merge_key($view_content, 'lang', $stranslate_keys);
         }
         echo "Success!\n";
+
         return $this->sanitizeArrayToTranslate($stranslate_keys);
     }
 
@@ -126,27 +127,30 @@ class TFTranslator extends Command
         //define function for scan translate keys
         $merge_key = function ($content, &$result, $file) {
             //pattern for auto search translate text
-            $regex_string = "#(([a-zA-Z0-9]| |\w+[.!\-,’&;'\?]\w?|[\"ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ])+(?=[<(\w.)>]))(<)#";
+            $regex_string = "/>([\w ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷ .!\-,’&;'\?])+<\//";
+
             preg_match_all($regex_string, $content, $key_matches);
 
-            if(!empty($key_matches[1])) {
-                foreach($key_matches[1] as $key) {
-                    $key = trim($key);
+            if(!empty($key_matches[0])) {
+                foreach($key_matches[0] as $key) {
+                    $key = substr(trim($key),1,strlen($key)-3);
                     if($key == '' || (int) $key != 0)
                         continue;
                     $result[$file][] = $key;
                 }
             }
-
+           
         };
 
         $stranslate_keys = [];
-        echo "+ Scanning texts in views: ";
+        echo "+ Scanning texts in views: "; 
         foreach($files as $file) {
             $view_content = File::get($file);
             $merge_key($view_content, $stranslate_keys, (string)$file);
+            
         }
         echo "completed!\n";
+      
         return $stranslate_keys;
     }
 
@@ -280,6 +284,7 @@ class TFTranslator extends Command
 
         //get all translate strings
         $stranslate_keys = $this->scanStringInTranslateFunctions();
+    
         foreach($langs as $lg) {
             echo "+ Writting $lg.json: \n";
             $this->writeTranslateStringKey($lg, $stranslate_keys);   
