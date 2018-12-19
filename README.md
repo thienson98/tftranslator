@@ -1,7 +1,11 @@
 # 3F Translator
-A simple Laravel package help you automatically translate all text on your site to other languages. Writed by Trieu Tai Niem.
+A simple Laravel package help you automatically translate all text on your site to other languages. Writed by [Trieu Tai Niem](http://facebook.com/trieuniem.it).
 
-##Features
+## Requirement
+* PHP: >= 7.0
+* Laravel: >= 5.5
+
+## Features
 * Automatically find translate string in parameter of translation functions ( *_()* or *lang()* ) and generate into json translation files
 
 * Automatically translates text found into other languages ​​using google translator
@@ -9,7 +13,7 @@ A simple Laravel package help you automatically translate all text on your site 
 * Automatically updates and translates newly added text
 
 
-##Installation
+## Installation
 Open terminal and change directory to your project folder, now using composer command bellow to install package:
 
 ```
@@ -24,9 +28,9 @@ ThienSon98\TFTranslator\TFTranslatorServiceProvider::class
 
 That's all!
 
-##How to use?
+## How to use?
 
-If you want to automatically generate locks from translation functions into json language files, use the following command:
+If you want to automatically generate keys from translation functions (**__** or **lang**) into json language files, use the following command:
 
 ```
 php artisan 3F:translator
@@ -46,25 +50,25 @@ php artisan 3F:translator --auto
 Translation functions will be added to the view files and automatically generated json language files.
 
 
-###Specify other languages
+### Specify other languages
 
-The default language of the translator is *Vietnamese (vi)* and *English (en)*. You can translate into other languages ​​through the ```--lang=<language code>``` option.
+The default languages of the translator are *Vietnamese (vi)* and *English (en)*. You can translate into other languages with the ```--lang=<language code>``` option.
 
-For example, use the following command to translate into Japanese:
+For example, use the following command to translate to Japanese:
 
 ```
 php artisan 3F:translator --lang=ja
 ```
 
-Or translate into Vietnamese, Japanese and Chinese:
+Or translate to Vietnamese, Japanese and Chinese:
 
 ```
 php artisan 3F:translator --lang=ja,vi,zh
 ```
 
-It supports all languages.
+It supports all languages and works with all of the options.
 
-###Remove unused keys
+### Remove unused keys
 
 To clean unused translation keys, you can use the following command:
 
@@ -74,7 +78,7 @@ php artisan 3F:translator --clear
 
 It will remove all the keys that are not using in views.
 
-###Just write the translation keys
+### Just write the translation keys
 Of course, if you do not want to use Google translator to translate your texts. You can use the option below:
 
 ```
